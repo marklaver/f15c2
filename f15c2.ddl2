@@ -1,0 +1,215 @@
+DROP SEQUENCE F15C2_auth_seq ; 
+create sequence F15C2_auth_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_auth_PK_trig 
+; 
+
+create or replace trigger F15C2_auth_PK_trig 
+before insert on F15C2_auth
+for each row 
+begin 
+select F15C2_auth_seq.nextval into :new.auth_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_comment_seq ; 
+create sequence F15C2_comment_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_comment_PK_trig 
+; 
+
+create or replace trigger F15C2_comment_PK_trig 
+before insert on F15C2_comment
+for each row 
+begin 
+select F15C2_comment_seq.nextval into :new.comment_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_contact_seq ; 
+create sequence F15C2_contact_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_contact_PK_trig 
+; 
+
+create or replace trigger F15C2_contact_PK_trig 
+before insert on F15C2_contact
+for each row 
+begin 
+select F15C2_contact_seq.nextval into :new.contact_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_document_seq ; 
+create sequence F15C2_document_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_document_PK_trig 
+; 
+
+create or replace trigger F15C2_document_PK_trig 
+before insert on F15C2_document
+for each row 
+begin 
+select F15C2_document_seq.nextval into :new.doc_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_emp_seq ; 
+create sequence F15C2_emp_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_emp_PK_trig 
+; 
+
+create or replace trigger F15C2_emp_PK_trig 
+before insert on F15C2_emp
+for each row 
+begin 
+select F15C2_emp_seq.nextval into :new.emp_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_history_seq ; 
+create sequence F15C2_history_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_history_PK_trig 
+; 
+
+create or replace trigger F15C2_history_PK_trig 
+before insert on F15C2_history
+for each row 
+begin 
+select F15C2_history_seq.nextval into :new.history_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_lab_seq ; 
+create sequence F15C2_lab_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_lab_PK_trig 
+; 
+
+create or replace trigger F15C2_lab_PK_trig 
+before insert on F15C2_lab
+for each row 
+begin 
+select F15C2_lab_seq.nextval into :new.lab_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_requester_seq ; 
+create sequence F15C2_requester_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_requester_PK_trig 
+; 
+
+create or replace trigger F15C2_requester_PK_trig 
+before insert on F15C2_requester
+for each row 
+begin 
+select F15C2_requester_seq.nextval into :new.requester_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_rfe_seq ; 
+create sequence F15C2_rfe_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_rfe_PK_trig 
+; 
+
+create or replace trigger F15C2_rfe_PK_trig 
+before insert on F15C2_rfe
+for each row 
+begin 
+select F15C2_rfe_seq.nextval into :new.rfe_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_status_seq ; 
+create sequence F15C2_status_seq 
+start with 1 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_status_PK_trig 
+; 
+
+create or replace trigger F15C2_status_PK_trig 
+before insert on F15C2_status
+for each row 
+begin 
+select F15C2_status_seq.nextval into :new.status_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_task_seq ; 
+create sequence F15C2_task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_task_PK_trig 
+; 
+
+create or replace trigger F15C2_task_PK_trig 
+before insert on F15C2_task
+for each row 
+begin 
+select F15C2_task_seq.nextval into :new.task_id from dual; 
+end; 
+/
+
+DROP INDEX F15C2_emp_emp_id_FK_0 ;
+CREATE INDEX F15C2_emp_emp_id_FK_0 ON F15C2_auth(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_1 ;
+CREATE INDEX F15C2_emp_emp_id_FK_1 ON F15C2_comment(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_2 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_2 ON F15C2_comment(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_3 ;
+CREATE INDEX F15C2_emp_emp_id_FK_3 ON F15C2_contact(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_4 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_4 ON F15C2_contact(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_5 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_5 ON F15C2_document(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_auth_auth_id_FK_6 ;
+CREATE INDEX F15C2_auth_auth_id_FK_6 ON F15C2_emp(F15C2_auth_auth_id) ;
+DROP INDEX F15C2_lab_lab_id_FK_7 ;
+CREATE INDEX F15C2_lab_lab_id_FK_7 ON F15C2_emp(F15C2_lab_lab_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_8 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_8 ON F15C2_history(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_9 ;
+CREATE INDEX F15C2_emp_emp_id_FK_9 ON F15C2_requester(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_10 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_10 ON F15C2_requester(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_11 ;
+CREATE INDEX F15C2_emp_emp_id_FK_11 ON F15C2_rfe(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_status_status_id_FK_12 ;
+CREATE INDEX F15C2_status_status_id_FK_12 ON F15C2_rfe(F15C2_status_status_id) ;
+DROP INDEX F15C2_task_task_id_FK_13 ;
+CREATE INDEX F15C2_task_task_id_FK_13 ON F15C2_rfe(F15C2_task_task_id) ;
