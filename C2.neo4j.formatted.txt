@@ -1,0 +1,88 @@
+# Change the followin oracle account id and password to your oracle account id and password. Also, change A0 to your group's number but don't use F15 because it will make some internal names be too long.
+
+conn = connectTo 'jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl' 'C##cs347_cc45524' 'orcl_cc45524' 'rdf_mode' 'C2';
+
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 1, EMAIL_ADDRESS : 'allan.sherwood@yahoo.com', PASSWORD : '650215acec746f0e32bdfff387439eefc1358737', FIRST_NAME : 'Allan', LAST_NAME : 'Sherwood', SHIPPING_ADDRESS_ID : 1, BILLING_ADDRESS_ID : 2 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 2, EMAIL_ADDRESS : 'barryz@gmail.com', PASSWORD : '3f563468d42a448cb1e56924529f6e7bbe529cc7', FIRST_NAME : 'Barry', LAST_NAME : 'Zimmer', SHIPPING_ADDRESS_ID : 3, BILLING_ADDRESS_ID : 3 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 3, EMAIL_ADDRESS : 'christineb@solarone.com', PASSWORD : 'ed19f5c0833094026a2f1e9e6f08a35d26037066', FIRST_NAME : 'Christine', LAST_NAME : 'Brown', SHIPPING_ADDRESS_ID : 4, BILLING_ADDRESS_ID : 4 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 4, EMAIL_ADDRESS : 'david.goldstein@hotmail.com', PASSWORD : 'b444ac06613fc8d63795be9ad0beaf55011936ac', FIRST_NAME : 'David', LAST_NAME : 'Goldstein', SHIPPING_ADDRESS_ID : 5, BILLING_ADDRESS_ID : 6 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 5, EMAIL_ADDRESS : 'erinv@gmail.com', PASSWORD : '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', FIRST_NAME : 'Erin', LAST_NAME : 'Valentino', SHIPPING_ADDRESS_ID : 7, BILLING_ADDRESS_ID : 7 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 6, EMAIL_ADDRESS : 'frankwilson@sbcglobal.net', PASSWORD : '3ebfa301dc59196f18593c45e519287a23297589', FIRST_NAME : 'Frank Lee', LAST_NAME : 'Wilson', SHIPPING_ADDRESS_ID : 8, BILLING_ADDRESS_ID : 8 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 7, EMAIL_ADDRESS : 'gary_hernandez@yahoo.com', PASSWORD : '1ff2b3704aede04eecb51e50ca698efd50a1379b', FIRST_NAME : 'Gary', LAST_NAME : 'Hernandez', SHIPPING_ADDRESS_ID : 9, BILLING_ADDRESS_ID : 10 })"
+Neo4j on conn "CREATE (:customers { CUSTOMER_ID : 8, EMAIL_ADDRESS : 'heatheresway@mac.com', PASSWORD : '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', FIRST_NAME : 'Heather', LAST_NAME : 'Esway', SHIPPING_ADDRESS_ID : 10, BILLING_ADDRESS_ID : 5 })"
+
+
+
+
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 1, CUSTOMER_ID : 1, LINE1 : '100 East Ridgewood Ave.', LINE2 : '', CITY : 'Paramus', STATE : 'NJ', ZIP_CODE : '07652', PHONE : '201-653-4472', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 2, CUSTOMER_ID : 2, LINE1 : '21 Rosewood Rd.', LINE2 : '', CITY : 'Woodcliff Lake', STATE : 'NJ', ZIP_CODE : '07677', PHONE : '201-653-4472', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 3, CUSTOMER_ID : 3, LINE1 : '16285 Wendell St.', LINE2 : '', CITY : 'Omaha', STATE : 'NE', ZIP_CODE : '68135', PHONE : '402-896-2576', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 4, CUSTOMER_ID : 4, LINE1 : '19270 NW Cornell Rd.', LINE2 : '', CITY : 'Beaverton', STATE : 'OR', ZIP_CODE : '97006', PHONE : '503-654-1291', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 5, CUSTOMER_ID : 5, LINE1 : '186 Vermont St.', LINE2 : 'Apt. 2', CITY : 'San Francisco', STATE : 'CA', ZIP_CODE : '94110', PHONE : '415-292-6651', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 6, CUSTOMER_ID : 6, LINE1 : '1374 46th Ave.', LINE2 : '', CITY : 'San Francisco', STATE : 'CA', ZIP_CODE : '94129', PHONE : '415-292-6651', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 7, CUSTOMER_ID : 7, LINE1 : '6982 Palm Ave.', LINE2 : '', CITY : 'Fresno', STATE : 'CA', ZIP_CODE : '93711', PHONE : '559-431-2398', DISABLED : 0 })"
+Neo4j on conn "CREATE (:addresses { ADDRESS_ID : 8, CUSTOMER_ID : 8, LINE1 : '23 Mountain View St.', LINE2 : '', CITY : 'Denver', STATE : 'CO', ZIP_CODE : '80208', PHONE : '303-912-3852', DISABLED : 0 })"
+
+
+
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 1 AND b.CUSTOMER_ID = 1 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 2 AND b.CUSTOMER_ID = 2 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 3 AND b.CUSTOMER_ID = 3 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 4 AND b.CUSTOMER_ID = 4 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 5 AND b.CUSTOMER_ID = 5 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 6 AND b.CUSTOMER_ID = 6 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 7 AND b.CUSTOMER_ID = 7 CREATE (a)<-[:address]-(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 8 AND b.CUSTOMER_ID = 8 CREATE (a)<-[:address]-(b)"
+
+Neo4j on conn "MATCH (a:addresses)<-[:address]-(b:customers) WHERE b.CUSTOMER_ID = 5 RETURN b.FIRST_NAME, b.LAST_NAME, b.EMAIL_ADDRESS"
+
+
+
+
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 1 AND b.CUSTOMER_ID = 1 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 2 AND b.CUSTOMER_ID = 2 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 3 AND b.CUSTOMER_ID = 3 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 4 AND b.CUSTOMER_ID = 4 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 5 AND b.CUSTOMER_ID = 5 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 6 AND b.CUSTOMER_ID = 6 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 7 AND b.CUSTOMER_ID = 7 CREATE (a)-[:resident]->(b)"
+Neo4j on conn "MATCH (a:addresses),(b:customers) WHERE a.CUSTOMER_ID = 8 AND b.CUSTOMER_ID = 8 CREATE (a)-[:resident]->(b)"
+
+
+Neo4j on conn "MATCH (a:addresses)-[:resident]->(b:customers)  RETURN b.FIRST_NAME, b.LAST_NAME, a.LINE1, a.LINE2, a.CITY"
+
+
+/* following codes is generated from professor's commandline:
+
+null
+ReLstmt is: MATCH (a:addresses)-[:resident]->(b:customers)  RETURN b.FIRST_NAME, b.LAST_NAME, a.LINE1, a.LINE2, a.CITY
+SIM is: FROM ADDRESSES RETRIEVE FIRST_NAME OF resident, LAST_NAME OF resident, LINE1, LINE2, CITY;
+PyTuple sim is: FROM ADDRESSES RETRIEVE FIRST_NAME OF resident, LAST_NAME OF resident, LINE1, LINE2, CITY;
+rq.getAttributePath(j).getIndirection(k): resident
+rq.getAttributePath(j).getIndirection(k): resident
+className: addresses
+dvaAttribs: [line1, line2, city]
+evaAttribs: [first_name OF resident, last_name OF resident]
+where: 
+whereAttrValues: {}
+SELECT DISTINCT  line1, line2, city, x0_1, x1_1
+ from table(
+   sem_match('select * where {
+	GRAPH <addresses_SCHEMA> { ?indiv rdf:type :addresses }
+	?indiv :line1 ?line1 .
+	?indiv :line2 ?line2 .
+	?indiv :city ?city .
+   OPTIONAL { 
+      ?indiv :resident ?x0_0 .
+      ?x0_0 :first_name ?x0_1 .
+      ?indiv :resident ?x0_0 .
+      ?x0_0 :last_name ?x1_1 .
+      } 
+   }',
+	SEM_MODELS('C2_C##CS347_CC45524'), null,
+	SEM_ALIASES( SEM_ALIAS('', '#')), null) )
+
+*/
+
+
+
