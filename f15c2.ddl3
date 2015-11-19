@@ -1,3 +1,43 @@
+DROP SEQUENCE F15C2_approver_seq ; 
+create sequence F15C2_approver_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger F15C2_approver_PK_trig 
+before insert on F15C2_approver
+for each row 
+begin 
+select F15C2_approver_seq.nextval into :new.approver_id from dual; 
+end; 
+/
+alter table F15C2_approver add created date ; 
+alter table F15C2_approver add created_by VARCHAR2 (255) ; 
+alter table F15C2_approver add row_version_number integer ; 
+alter table F15C2_approver add updated date ; 
+alter table F15C2_approver add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger F15C2_approver_AUD_trig 
+before insert or update on F15C2_approver 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
 DROP SEQUENCE F15C2_auth_seq ; 
 create sequence F15C2_auth_seq 
 start with 100 
@@ -278,46 +318,6 @@ begin
 end; 
 /
 
-DROP SEQUENCE F15C2_requester_seq ; 
-create sequence F15C2_requester_seq 
-start with 100 
-increment by 1 
-nomaxvalue 
-;
-
-create or replace trigger F15C2_requester_PK_trig 
-before insert on F15C2_requester
-for each row 
-begin 
-select F15C2_requester_seq.nextval into :new.requester_id from dual; 
-end; 
-/
-alter table F15C2_requester add created date ; 
-alter table F15C2_requester add created_by VARCHAR2 (255) ; 
-alter table F15C2_requester add row_version_number integer ; 
-alter table F15C2_requester add updated date ; 
-alter table F15C2_requester add updated_by VARCHAR2 (255) ; 
-/
-create or replace trigger F15C2_requester_AUD_trig 
-before insert or update on F15C2_requester 
-for each row 
-begin 
-  if inserting then 
-    :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
-    :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
-    :new.row_version_number := 1; 
-  elsif updating then 
-    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
-  end if; 
-  if inserting or updating then 
-    :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
-  end if; 
-end; 
-/
-
 DROP SEQUENCE F15C2_rfe_seq ; 
 create sequence F15C2_rfe_seq 
 start with 100 
@@ -438,31 +438,73 @@ begin
 end; 
 /
 
+DROP SEQUENCE rfe_task_seq ; 
+create sequence rfe_task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger rfe_task_PK_trig 
+before insert on rfe_task
+for each row 
+begin 
+select rfe_task_seq.nextval into :new.rfe_task_id from dual; 
+end; 
+/
+alter table rfe_task add created date ; 
+alter table rfe_task add created_by VARCHAR2 (255) ; 
+alter table rfe_task add row_version_number integer ; 
+alter table rfe_task add updated date ; 
+alter table rfe_task add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger rfe_task_AUD_trig 
+before insert or update on rfe_task 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
 DROP INDEX F15C2_emp_emp_id_FK_0 ;
-CREATE INDEX F15C2_emp_emp_id_FK_0 ON F15C2_auth(F15C2_emp_emp_id) ;
-DROP INDEX F15C2_emp_emp_id_FK_1 ;
-CREATE INDEX F15C2_emp_emp_id_FK_1 ON F15C2_comment(F15C2_emp_emp_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_2 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_2 ON F15C2_comment(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_emp_emp_id_FK_3 ;
-CREATE INDEX F15C2_emp_emp_id_FK_3 ON F15C2_contact(F15C2_emp_emp_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_4 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_4 ON F15C2_contact(F15C2_rfe_rfe_id) ;
+CREATE INDEX F15C2_emp_emp_id_FK_0 ON F15C2_approver(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_1 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_1 ON F15C2_approver(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_2 ;
+CREATE INDEX F15C2_emp_emp_id_FK_2 ON F15C2_comment(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_3 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_3 ON F15C2_comment(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_4 ;
+CREATE INDEX F15C2_emp_emp_id_FK_4 ON F15C2_contact(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_rfe_rfe_id_FK_5 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_5 ON F15C2_document(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_auth_auth_id_FK_6 ;
-CREATE INDEX F15C2_auth_auth_id_FK_6 ON F15C2_emp(F15C2_auth_auth_id) ;
-DROP INDEX F15C2_lab_lab_id_FK_7 ;
-CREATE INDEX F15C2_lab_lab_id_FK_7 ON F15C2_emp(F15C2_lab_lab_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_8 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_8 ON F15C2_history(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_emp_emp_id_FK_9 ;
-CREATE INDEX F15C2_emp_emp_id_FK_9 ON F15C2_requester(F15C2_emp_emp_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_10 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_10 ON F15C2_requester(F15C2_rfe_rfe_id) ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_5 ON F15C2_contact(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_6 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_6 ON F15C2_document(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_auth_auth_id_FK_7 ;
+CREATE INDEX F15C2_auth_auth_id_FK_7 ON F15C2_emp(F15C2_auth_auth_id) ;
+DROP INDEX F15C2_lab_lab_id_FK_8 ;
+CREATE INDEX F15C2_lab_lab_id_FK_8 ON F15C2_emp(F15C2_lab_lab_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_9 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_9 ON F15C2_history(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_status_status_id_FK_10 ;
+CREATE INDEX F15C2_status_status_id_FK_10 ON F15C2_history(F15C2_status_status_id) ;
 DROP INDEX F15C2_emp_emp_id_FK_11 ;
 CREATE INDEX F15C2_emp_emp_id_FK_11 ON F15C2_rfe(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_status_status_id_FK_12 ;
 CREATE INDEX F15C2_status_status_id_FK_12 ON F15C2_rfe(F15C2_status_status_id) ;
-DROP INDEX F15C2_task_task_id_FK_13 ;
-CREATE INDEX F15C2_task_task_id_FK_13 ON F15C2_rfe(F15C2_task_task_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_13 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_13 ON rfe_task(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_task_task_id_FK_14 ;
+CREATE INDEX F15C2_task_task_id_FK_14 ON rfe_task(F15C2_task_task_id) ;
