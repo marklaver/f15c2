@@ -1,0 +1,69 @@
+# Change the followin oracle account id and password to your oracle account id and password. Also, change A0 to your group's number but don't use F15 because it will make some internal names be too long.
+
+conn = connectTo 'jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl' 'C##cs347_cc45524' 'orcl_cc45524' 'rdf_mode' 'C2';
+
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 1, HERO_NAME : 'Nova', TITLE : 'Dominion Ghost', UNIVERSE : 1, ROLE : 'Ranged Assassin' , HEORIC_ABILITY : 'Precision Strike', BASIC_DAMAGE : 40, BASIC_HEALTH : 700, BASIC_MANA : 500})"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 2, HERO_NAME : 'Raynor', TITLE : 'Renegade Commander', UNIVERSE : 1, ROLE : 'Ranged Assassin', HEORIC_ABILITY : 'Hyperion', BASIC_DAMAGE: 40, BASIC_HEALTH : 725, BASIC_MANA : 500} )"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 3, HERO_NAME : 'Tychus', TITLE : 'Notorious Outlaw', UNIVERSE : 1, ROLE : 'Ranged Assassin', HEORIC_ABILITY : 'Commander Odin', BASIC_DAMAGE : 25, BASIC_HEALTH : 725, BASIC_MANA : 500}
+)"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 4, HERO_NAME : 'Diablo', TITLE : 'Lord of Terror', UNIVERSE : 2, ROLE : 'Melee Warrior', HEORIC_ABILITY : 'Apocalypse', BASIC_DAMAGE : 49, BASIC_HEALTH : 1050, BASIC_MANA : 500})"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 5, HERO_NAME : 'Kharazim', TITLE : 'Veradani Monk', UNIVERSE : 4, ROLE : 'Melee Support' , HEORIC_ABILITY : 'Sever Sided Strike', BASIC_DAMAGE : 25 ,BASIC_HEALTH : 850, BASIC_MANA : 500})"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 6, HERO_NAME : 'Valla', TITLE : 'Demon Hunter', UNIVERSE : 4, ROLE : 'Ranged Assassin', HEORIC_ABILITY : 'Strafe', BASIC_DAMAGE : 28, BASIC_HEALTH : 700, BASIC_MANA : 500})"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 7, HERO_NAME : 'Arthas', TITLE : 'The Lich King', UNIVERSE : 3, ROLE : 'Melee Warrior', HEORIC_ABILITY : 'Army of the Dead', BASIC_DAMAGE : 47, BASIC_HEALTH : 1040, BASIC_MANA : 500})"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 8, HERO_NAME : 'Tyrade', TITLE : 'High Priestess of Elune', UNIVERSE : 3, ROLE : 'Ranged Support', HEORIC_ABILITY : 'Shadow Walk', BASIC_DAMAGE : 30, BASIC_HEALTH : 635, BASIC_MANA : 500})"
+
+Neo4j on conn "CREATE (:hero {HERO_ID : 9, HERO_NAME : 'Sylvana', TITLE : 'The Banshee Queen', UNIVERSE : 3, ROLE : 'Specialist', HEORIC_ABILITY : 'The Wailing Arrow', BASIC_DAMAGE : 30, BASIC_HEALTH : 720, BASIC_MANA : 500})"
+
+
+
+
+Neo4j on conn "CREATE(:game {GAME_ID : 1, GAME_NAME : 'StarCraft', PUBLISHED_YEAR : 1998, GENRE : 'MMORPG', COMPANY : 'Blizzard'})"
+
+Neo4j on conn "CREATE(:game {GAME_ID : 2, GAME_NAME : 'Diablo', PUBLISHED_YEAR : 1996 , GENRE : 'RPG', COMPANY : 'Blizzard'})"
+
+Neo4j on conn "CREATE(:game {GAME_ID : 3, GAME_NAME : 'WarCraft', PUBLISHED_YEAR : 1994, GENRE : 'MOBA', COMPANY : 'Blizzard'})"
+
+Neo4j on conn "CREATE(:game {GAME_ID : 4, GAME_NAME : 'Diablo3', PUBLISHED_YEAR : 2012 , GENRE : 'RPG', COMPANY : 'Blizzard'})"
+
+
+
+
+
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 1 AND b.GAME_ID = 1 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 2 AND b.GAME_ID = 1 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 3 AND b.GAME_ID = 1 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 4 AND b.GAME_ID = 2 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 5 AND b.GAME_ID = 4 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 6 AND b.GAME_ID = 4 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 7 AND b.GAME_ID = 3 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 8 AND b.GAME_ID = 3 CREATE (a)<-[:character]-(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 9 AND b.GAME_ID = 3 CREATE (a)<-[:character]-(b)"
+
+
+
+Neo4j on conn "MATCH (a:hero)<-[:character]-(b:game) WHERE b.GAME_ID = 1  RETURN b.GAME_NAME, b.PUBLISHED_YEAR"
+
+
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 1 AND b.GAME_ID = 1 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 2 AND b.GAME_ID = 1 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 3 AND b.GAME_ID = 1 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 4 AND b.GAME_ID = 2 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 5 AND b.GAME_ID = 4 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 6 AND b.GAME_ID = 4 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 7 AND b.GAME_ID = 3 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 8 AND b.GAME_ID = 3 CREATE (a)-[:environment]->(b)"
+Neo4j on conn "MATCH (a:hero),(b:game) WHERE a.UNIVERSE = 9 AND b.GAME_ID = 3 CREATE (a)-[:environment]->(b)"
+
+
+
+Neo4j on conn "MATCH (a:hero)-[:environment]->(b:game)  RETURN a.HERO_NAME, a.TITLE, a.ROLE, a.HEROIC_ABILITY"
+
+
