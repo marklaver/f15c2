@@ -50,7 +50,8 @@ CREATE TABLE F15C2_comment
     comment_id       INTEGER NOT NULL ,
     F15C2_rfe_rfe_id INTEGER NOT NULL ,
     F15C2_emp_emp_id INTEGER NOT NULL ,
-    comments         VARCHAR2 (4000) NOT NULL
+    comments         VARCHAR2 (4000) NOT NULL,
+    comment_entry_date DATE NOT NULL
   ) ;
 ALTER TABLE F15C2_comment ADD CONSTRAINT F15C2_comment_PK PRIMARY KEY ( comment_id ) ;
 
