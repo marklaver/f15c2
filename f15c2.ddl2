@@ -17,7 +17,7 @@ end;
 
 DROP SEQUENCE F15C2_auth_seq ; 
 create sequence F15C2_auth_seq 
-start with 1 
+start with 100 
 increment by 1 
 nomaxvalue 
 ;
@@ -151,9 +151,43 @@ select F15C2_rfe_seq.nextval into :new.rfe_id from dual;
 end; 
 /
 
+DROP SEQUENCE F15C2_rfe_task_seq ; 
+create sequence F15C2_rfe_task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_rfe_task_PK_trig 
+; 
+
+create or replace trigger F15C2_rfe_task_PK_trig 
+before insert on F15C2_rfe_task
+for each row 
+begin 
+select F15C2_rfe_task_seq.nextval into :new.rfe_task_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15C2_role_seq ; 
+create sequence F15C2_role_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15C2_role_PK_trig 
+; 
+
+create or replace trigger F15C2_role_PK_trig 
+before insert on F15C2_role
+for each row 
+begin 
+select F15C2_role_seq.nextval into :new.role_id from dual; 
+end; 
+/
+
 DROP SEQUENCE F15C2_status_seq ; 
 create sequence F15C2_status_seq 
-start with 1 
+start with 100 
 increment by 1 
 nomaxvalue 
 ;
@@ -185,23 +219,6 @@ select F15C2_task_seq.nextval into :new.task_id from dual;
 end; 
 /
 
-DROP SEQUENCE F15C2_rfe_task_seq ; 
-create sequence F15C2_rfe_task_seq 
-start with 100 
-increment by 1 
-nomaxvalue 
-;
-DROP TRIGGER F15C2_rfe_task_PK_trig 
-; 
-
-create or replace trigger F15C2_rfe_task_PK_trig 
-before insert on F15C2_rfe_task
-for each row 
-begin 
-select F15C2_rfe_task_seq.nextval into :new.F15C2_rfe_task_id from dual; 
-end; 
-/
-
 DROP INDEX F15C2_emp_emp_id_FK_0 ;
 CREATE INDEX F15C2_emp_emp_id_FK_0 ON F15C2_approver(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_rfe_rfe_id_FK_1 ;
@@ -214,21 +231,25 @@ DROP INDEX F15C2_emp_emp_id_FK_4 ;
 CREATE INDEX F15C2_emp_emp_id_FK_4 ON F15C2_contact(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_rfe_rfe_id_FK_5 ;
 CREATE INDEX F15C2_rfe_rfe_id_FK_5 ON F15C2_contact(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_6 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_6 ON F15C2_document(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_auth_auth_id_FK_7 ;
-CREATE INDEX F15C2_auth_auth_id_FK_7 ON F15C2_emp(F15C2_auth_auth_id) ;
-DROP INDEX F15C2_lab_lab_id_FK_8 ;
-CREATE INDEX F15C2_lab_lab_id_FK_8 ON F15C2_emp(F15C2_lab_lab_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_9 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_9 ON F15C2_history(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_status_status_id_FK_10 ;
-CREATE INDEX F15C2_status_status_id_FK_10 ON F15C2_history(F15C2_status_status_id) ;
-DROP INDEX F15C2_emp_emp_id_FK_11 ;
-CREATE INDEX F15C2_emp_emp_id_FK_11 ON F15C2_rfe(F15C2_emp_emp_id) ;
-DROP INDEX F15C2_status_status_id_FK_12 ;
-CREATE INDEX F15C2_status_status_id_FK_12 ON F15C2_rfe(F15C2_status_status_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_13 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_13 ON F15C2_rfe_task(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_role_role_id_FK_6 ;
+CREATE INDEX F15C2_role_role_id_FK_6 ON F15C2_contact(F15C2_role_role_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_7 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_7 ON F15C2_document(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_auth_auth_id_FK_8 ;
+CREATE INDEX F15C2_auth_auth_id_FK_8 ON F15C2_emp(F15C2_auth_auth_id) ;
+DROP INDEX F15C2_lab_lab_id_FK_9 ;
+CREATE INDEX F15C2_lab_lab_id_FK_9 ON F15C2_emp(F15C2_lab_lab_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_10 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_10 ON F15C2_history(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_status_status_id_FK_11 ;
+CREATE INDEX F15C2_status_status_id_FK_11 ON F15C2_history(F15C2_status_status_id) ;
+DROP INDEX F15C2_emp_emp_id_FK_12 ;
+CREATE INDEX F15C2_emp_emp_id_FK_12 ON F15C2_rfe(F15C2_emp_emp_id) ;
+DROP INDEX F15C2_status_status_id_FK_13 ;
+CREATE INDEX F15C2_status_status_id_FK_13 ON F15C2_rfe(F15C2_status_status_id) ;
 DROP INDEX F15C2_task_task_id_FK_14 ;
-CREATE INDEX F15C2_task_task_id_FK_14 ON F15C2_rfe_task(F15C2_task_task_id) ;
+CREATE INDEX F15C2_task_task_id_FK_14 ON F15C2_rfe(F15C2_task_task_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_15 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_15 ON F15C2_rfe_task(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_task_task_id_FK_16 ;
+CREATE INDEX F15C2_task_task_id_FK_16 ON F15C2_rfe_task(F15C2_task_task_id) ;
