@@ -24,16 +24,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -64,16 +64,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -104,16 +104,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -144,16 +144,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -184,16 +184,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -224,16 +224,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -264,16 +264,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -304,16 +304,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -344,16 +344,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -384,16 +384,16 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -424,56 +424,56 @@ for each row
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
 
-DROP SEQUENCE rfe_task_seq ; 
-create sequence rfe_task_seq 
+DROP SEQUENCE F15C2_rfe_task_seq ; 
+create sequence F15C2_rfe_task_seq 
 start with 100 
 increment by 1 
 nomaxvalue 
 ;
 
-create or replace trigger rfe_task_PK_trig 
-before insert on rfe_task
+create or replace trigger F15C2_rfe_task_PK_trig 
+before insert on F15C2_rfe_task
 for each row 
 begin 
-select rfe_task_seq.nextval into :new.rfe_task_id from dual; 
+select F15C2_rfe_task_seq.nextval into :new.F15C2_rfe_task_id from dual; 
 end; 
 /
-alter table rfe_task add created date ; 
-alter table rfe_task add created_by VARCHAR2 (255) ; 
-alter table rfe_task add row_version_number integer ; 
-alter table rfe_task add updated date ; 
-alter table rfe_task add updated_by VARCHAR2 (255) ; 
+alter table F15C2_rfe_task add created date ; 
+alter table F15C2_rfe_task add created_by VARCHAR2 (255) ; 
+alter table F15C2_rfe_task add row_version_number integer ; 
+alter table F15C2_rfe_task add updated date ; 
+alter table F15C2_rfe_task add updated_by VARCHAR2 (255) ; 
 /
-create or replace trigger rfe_task_AUD_trig 
-before insert or update on rfe_task 
+create or replace trigger F15C2_rfe_task_AUD_trig 
+before insert or update on F15C2_rfe_task 
 for each row 
 begin 
   if inserting then 
     :new.created := localtimestamp; 
-    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.created_by := v('P1_EMP'); 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
     :new.row_version_number := 1; 
   elsif updating then 
     :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
   end if; 
   if inserting or updating then 
     :new.updated := localtimestamp; 
-    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.updated_by := v('P1_EMP'); 
   end if; 
 end; 
 /
@@ -505,6 +505,6 @@ CREATE INDEX F15C2_emp_emp_id_FK_11 ON F15C2_rfe(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_status_status_id_FK_12 ;
 CREATE INDEX F15C2_status_status_id_FK_12 ON F15C2_rfe(F15C2_status_status_id) ;
 DROP INDEX F15C2_rfe_rfe_id_FK_13 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_13 ON rfe_task(F15C2_rfe_rfe_id) ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_13 ON F15C2_rfe_task(F15C2_rfe_rfe_id) ;
 DROP INDEX F15C2_task_task_id_FK_14 ;
-CREATE INDEX F15C2_task_task_id_FK_14 ON rfe_task(F15C2_task_task_id) ;
+CREATE INDEX F15C2_task_task_id_FK_14 ON F15C2_rfe_task(F15C2_task_task_id) ;

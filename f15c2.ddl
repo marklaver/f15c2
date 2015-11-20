@@ -28,7 +28,7 @@ DROP TABLE F15C2_status CASCADE CONSTRAINTS ;
 
 DROP TABLE F15C2_task CASCADE CONSTRAINTS ;
 
-DROP TABLE rfe_task CASCADE CONSTRAINTS ;
+DROP TABLE F15C2_rfe_task CASCADE CONSTRAINTS ;
 
 CREATE TABLE F15C2_approver
   (
@@ -60,6 +60,7 @@ CREATE TABLE F15C2_contact
     contact_id       INTEGER NOT NULL ,
     F15C2_rfe_rfe_id INTEGER NOT NULL ,
     F15C2_emp_emp_id INTEGER NOT NULL ,
+    contact_role     INTEGER NOT NULL ,
     comments         VARCHAR2 (4000) ,
     effective_date   DATE NOT NULL
   ) ;
@@ -124,7 +125,7 @@ CREATE TABLE F15C2_rfe
     rfe_id                 INTEGER NOT NULL ,
     F15C2_emp_emp_id       INTEGER NOT NULL ,
     F15C2_status_status_id INTEGER NOT NULL ,
-    status_eff_date        DATE NOT NULL ,
+	status_eff_date		   DATE NOT NULL ,
     explanation            VARCHAR2 (4000) NOT NULL ,
     alt_protections        VARCHAR2 (4000) NOT NULL ,
     approval_review_date   DATE
@@ -149,15 +150,14 @@ CREATE TABLE F15C2_task
   ) ;
 ALTER TABLE F15C2_task ADD CONSTRAINT F15C2_task_PK PRIMARY KEY ( task_id ) ;
 
-
-CREATE TABLE rfe_task
+CREATE TABLE F15C2_rfe_task
   (
-    rfe_task_id        INTEGER NOT NULL ,
+    F15C2_rfe_task_id        INTEGER NOT NULL ,
     F15C2_rfe_rfe_id   INTEGER ,
     F15C2_task_task_id INTEGER NOT NULL ,
     effective_date     DATE NOT NULL
   ) ;
-ALTER TABLE rfe_task ADD CONSTRAINT rfe_task_PK PRIMARY KEY ( rfe_task_id ) ;
+ALTER TABLE F15C2_rfe_task ADD CONSTRAINT F15C2_rfe_task_PK PRIMARY KEY ( F15C2_rfe_task_id ) ;
 
 
 ALTER TABLE F15C2_approver ADD CONSTRAINT F15C2_approver_F15C2_emp_FK FOREIGN KEY ( F15C2_emp_emp_id ) REFERENCES F15C2_emp ( emp_id ) ;
@@ -186,9 +186,9 @@ ALTER TABLE F15C2_rfe ADD CONSTRAINT F15C2_rfe_F15C2_emp_FK FOREIGN KEY ( F15C2_
 
 ALTER TABLE F15C2_rfe ADD CONSTRAINT F15C2_rfe_F15C2_status_FK FOREIGN KEY ( F15C2_status_status_id ) REFERENCES F15C2_status ( status_id ) ;
 
-ALTER TABLE rfe_task ADD CONSTRAINT rfe_task_F15C2_rfe_FK FOREIGN KEY ( F15C2_rfe_rfe_id ) REFERENCES F15C2_rfe ( rfe_id ) ;
+ALTER TABLE F15C2_rfe_task ADD CONSTRAINT F15C2_rfe_task_F15C2_rfe_FK FOREIGN KEY ( F15C2_rfe_rfe_id ) REFERENCES F15C2_rfe ( rfe_id ) ;
 
-ALTER TABLE rfe_task ADD CONSTRAINT rfe_task_F15C2_task_FK FOREIGN KEY ( F15C2_task_task_id ) REFERENCES F15C2_task ( task_id ) ;
+ALTER TABLE F15C2_rfe_task ADD CONSTRAINT F15C2_rfe_task_F15C2_task_FK FOREIGN KEY ( F15C2_task_task_id ) REFERENCES F15C2_task ( task_id ) ;
 
 
 -- Oracle SQL Developer Data Modeler Summary Report: 

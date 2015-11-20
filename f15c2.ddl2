@@ -17,7 +17,7 @@ end;
 
 DROP SEQUENCE F15C2_auth_seq ; 
 create sequence F15C2_auth_seq 
-start with 100 
+start with 1 
 increment by 1 
 nomaxvalue 
 ;
@@ -153,7 +153,7 @@ end;
 
 DROP SEQUENCE F15C2_status_seq ; 
 create sequence F15C2_status_seq 
-start with 100 
+start with 1 
 increment by 1 
 nomaxvalue 
 ;
@@ -185,20 +185,20 @@ select F15C2_task_seq.nextval into :new.task_id from dual;
 end; 
 /
 
-DROP SEQUENCE rfe_task_seq ; 
-create sequence rfe_task_seq 
+DROP SEQUENCE F15C2_rfe_task_seq ; 
+create sequence F15C2_rfe_task_seq 
 start with 100 
 increment by 1 
 nomaxvalue 
 ;
-DROP TRIGGER rfe_task_PK_trig 
+DROP TRIGGER F15C2_rfe_task_PK_trig 
 ; 
 
-create or replace trigger rfe_task_PK_trig 
-before insert on rfe_task
+create or replace trigger F15C2_rfe_task_PK_trig 
+before insert on F15C2_rfe_task
 for each row 
 begin 
-select rfe_task_seq.nextval into :new.rfe_task_id from dual; 
+select F15C2_rfe_task_seq.nextval into :new.F15C2_rfe_task_id from dual; 
 end; 
 /
 
@@ -229,6 +229,6 @@ CREATE INDEX F15C2_emp_emp_id_FK_11 ON F15C2_rfe(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_status_status_id_FK_12 ;
 CREATE INDEX F15C2_status_status_id_FK_12 ON F15C2_rfe(F15C2_status_status_id) ;
 DROP INDEX F15C2_rfe_rfe_id_FK_13 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_13 ON rfe_task(F15C2_rfe_rfe_id) ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_13 ON F15C2_rfe_task(F15C2_rfe_rfe_id) ;
 DROP INDEX F15C2_task_task_id_FK_14 ;
-CREATE INDEX F15C2_task_task_id_FK_14 ON rfe_task(F15C2_task_task_id) ;
+CREATE INDEX F15C2_task_task_id_FK_14 ON F15C2_rfe_task(F15C2_task_task_id) ;
