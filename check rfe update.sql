@@ -4,7 +4,7 @@ on F15C2_rfe
 for each row
 begin 
 if updating then
-  if F15C2_status_status_id = 5 or F15C2_status_status_id = 9
+  if F15C2_status_status_id = 5 or F15C2_status_status_id = 9 then
   	rollback;
   end if;
 end if;
@@ -21,7 +21,7 @@ begin
   if updating then
   select F15C2_status_status_id into n from F15C2_rfe a join F15C2_contact b
   on a.rfe_id = b.F15C2_rfe_rfe_id;
-  	if n = 5 or n = 9
+  	if n = 5 or n = 9 then
   		rollback;
   	end if;
   end if;
@@ -38,7 +38,7 @@ begin
   if updating then
   select F15C2_status_status_id into n from F15C2_rfe a join F15C2_approver b
   on a.rfe_id = b.F15C2_rfe_rfe_id;
-  	if n = 5 or n = 9
+  	if n = 5 or n = 9 then
   		rollback;
   	end if;
   end if;
@@ -51,7 +51,7 @@ on F15C2_history
 for each row
 begin 
 if updating then
-  if F15C2_status_status_id = 5 or F15C2_status_status_id = 9
+  if F15C2_status_status_id = 5 or F15C2_status_status_id = 9 then
   	rollback;
   end if;
 end if;
@@ -60,7 +60,7 @@ END;
 
 create or replace trigger task_before_update
 before update
-on rfe_task
+on F15C2_rfe_task
 for each row
 declare
   n number;
@@ -68,7 +68,7 @@ begin
   if updating then
   select F15C2_status_status_id into n from F15C2_rfe a join rfe_task b
   on a.rfe_id = b.F15C2_rfe_rfe_id;
-  	if n = 5 or n = 9
+  	if n = 5 or n = 9 then
   		rollback;
   	end if;
   end if;
@@ -85,7 +85,7 @@ begin
   if updating then
   select F15C2_status_status_id into n from F15C2_rfe a join F15C2_document b
   on a.rfe_id = b.F15C2_rfe_rfe_id;
-  	if n = 5 or n = 9
+  	if n = 5 or n = 9 then
   		rollback;
   	end if;
   end if;
@@ -102,7 +102,7 @@ begin
   if updating then
   select F15C2_status_status_id into n from F15C2_rfe a join F15C2_comment b
   on a.rfe_id = b.F15C2_rfe_rfe_id;
-  	if n = 5 or n = 9
+  	if n = 5 or n = 9 then
   		rollback;
   	end if;
   end if;
