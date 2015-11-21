@@ -131,8 +131,7 @@ CREATE TABLE F15C2_rfe
     status_eff_date        DATE NOT NULL ,
     explanation            VARCHAR2 (4000) NOT NULL ,
     alt_protections        VARCHAR2 (4000) NOT NULL ,
-    approval_review_date   DATE ,
-    F15C2_task_task_id     INTEGER
+    approval_review_date   DATE 
   ) ;
 ALTER TABLE F15C2_rfe ADD CONSTRAINT F15C2_rfe_PK PRIMARY KEY ( rfe_id ) ;
 
@@ -201,8 +200,6 @@ ALTER TABLE F15C2_history ADD CONSTRAINT F15C2_history_F15C2_status_FK FOREIGN K
 ALTER TABLE F15C2_rfe ADD CONSTRAINT F15C2_rfe_F15C2_emp_FK FOREIGN KEY ( F15C2_emp_emp_id ) REFERENCES F15C2_emp ( emp_id ) ;
 
 ALTER TABLE F15C2_rfe ADD CONSTRAINT F15C2_rfe_F15C2_status_FK FOREIGN KEY ( F15C2_status_status_id ) REFERENCES F15C2_status ( status_id ) ;
-
-ALTER TABLE F15C2_rfe ADD CONSTRAINT F15C2_rfe_F15C2_task_FK FOREIGN KEY ( F15C2_task_task_id ) REFERENCES F15C2_task ( task_id ) ;
 
 ALTER TABLE F15C2_rfe_task ADD CONSTRAINT F15C2_rfe_task_F15C2_rfe_FK FOREIGN KEY ( F15C2_rfe_rfe_id ) REFERENCES F15C2_rfe ( rfe_id ) ;
 
