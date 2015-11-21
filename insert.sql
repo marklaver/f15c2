@@ -98,4 +98,35 @@ ALTER TABLE F15C2_rfe ENABLE CONSTRAINT F15C2_rfe_F15C2_status_FK;
 ALTER TRIGGER F15C2_emp_PK_trig ENABLE;
 --select * from f15c2_status;
 
+ALTER TABLE F15C2_contact DISABLE CONSTRAINT F15C2_contact_F15C2_role_FK;
+ALTER TRIGGER F15C2_role_PK_trig DISABLE;
+TRUNCATE TABLE F15C2_role;
+INSERT INTO F15C2_role (role_id, emp_role, description) VALUES 
+    (1, 'Requester', 'The employee who created the RFE.');
+INSERT INTO F15C2_role (role_id, emp_role, description) VALUES 
+    (2, 'FYI Reviewer', 'An employee with peripheral interests; will get automatically notified at certain stages.');
+INSERT INTO F15C2_role (role_id, emp_role, description) VALUES 
+    (3, 'Sys Admin Approver', 'First round approver for new RFEs in their lab.');
+INSERT INTO F15C2_role (role_id, emp_role, description) VALUES 
+    (4, 'Lab Director Approver', 'Second round approver for new RFEs in their lab.');
+INSERT INTO F15C2_role (role_id, emp_role, description) VALUES 
+    (5, 'Network Security Panel approver.');
+INSERT INTO F15C2_role (role_id, emp_role, description) VALUES 
+    (6, 'Exec Dir Approver', 'Final round approver for all RFEs.');
+ALTER TABLE F15C2_contact ENABLE CONSTRAINT F15C2_contact_F15C2_role_FK;
+ALTER TRIGGER F15C2_role_PK_trig ENABLE;
+--select * from f15c2_role;
+
 COMMIT;
+
+'''
+INSERT INTO F15C2_rfe (rfe_id, f15c2_emp_emp_id, f15c2_status_status_id, status_eff_date, explanation, alt_protections) VALUES 
+    (1, 1, 1, SYSDATE, 'explanation', 'protections');
+
+UPDATE f15c2_rfe SET F15C2_STATUS_STATUS_ID = 3 WHERE rfe_id = 104;
+
+select * from f15c2_rfe;
+select * from f15c2_history;
+select * from f15c2_contact;
+select * from user_triggers;
+'''
