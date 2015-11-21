@@ -1,14 +1,14 @@
 drop view F15C2_emp_view ;
 drop view F15C2_execdir_view ;
 drop view F15C2_chair_view ;
-drop view F15C2_project_emp_view ;
-drop view F15C2_manager_view ;
+drop view F15C2_sysadmin_view ;
+drop view F15C2_labdir_view ;
 
 create view F15C2_emp_view as
 SELECT 
     emp_id,
-    auth_id,
-    lab_id,
+    f15c2_auth_auth_id,
+    f15c2_lab_lab_id,
     emp_name,
     emp_email,
     emp_office,
@@ -27,8 +27,8 @@ create or replace TRIGGER F15C2_emp_trigger
 BEGIN
     insert into F15C2_emp( 
         emp_id,
-        auth_id,
-        lab_id,
+        f15c2_auth_auth_id,
+        f15c2_lab_lab_id,
         emp_name,
         emp_email,
         emp_office,
@@ -41,26 +41,26 @@ BEGIN
         chairperson_flag)
          VALUES ( 
         :NEW.emp_id,
-        :NEW.auth_id,
-        :NEW.lab_id,
+        :NEW.f15c2_auth_auth_id,
+        :NEW.f15c2_lab_lab_id,
         :NEW.emp_name,
         :NEW.emp_email,
         :NEW.emp_office,
         :NEW.emp_phone,
         :NEW.emp_status,
         :NEW.status_eff_date,
-        :NEW.sys_admin_flag,
-        :NEW.lab_dir_flag,
-        :NEW.exec_dir_flag,
-        :NEW.chairperson_flag) ;
+        'N',
+        'N',
+        'N',
+        'N') ;
 END;
 /
 
 create view F15C2_execdir_view as
 SELECT 
     emp_id,
-    auth_id,
-    lab_id,
+    f15c2_auth_auth_id,
+    f15c2_lab_lab_id,
     emp_name,
     emp_email,
     emp_office,
@@ -78,9 +78,9 @@ create or replace TRIGGER F15C2_execdir_trigger
      FOR EACH ROW
 BEGIN
     insert into F15C2_emp( 
-		emp_id,
-        auth_id,
-        lab_id,
+        emp_id,
+        f15c2_auth_auth_id,
+        f15c2_lab_lab_id,
         emp_name,
         emp_email,
         emp_office,
@@ -93,26 +93,26 @@ BEGIN
         chairperson_flag)
 		 VALUES ( 
 		:NEW.emp_id,
-		:NEW.auth_id,
-		:NEW.lab_id,
+		:NEW.f15c2_auth_auth_id,
+		:NEW.f15c2_lab_lab_id,
 		:NEW.emp_name,
 		:NEW.emp_email,
 		:NEW.emp_office,
 		:NEW.emp_phone,
 		:NEW.emp_status,
         :NEW.status_eff_date,
-		:NEW.sys_admin_flag,
-        :NEW.lab_dir_flag,
-        :NEW.exec_dir_flag,
-        :NEW.chairperson_flag) ;
+        'N',
+        'N',
+        'Y',
+        'N') ;
 END;
 /
 
 create view F15C2_chair_view as
 SELECT 
     emp_id,
-    auth_id,
-    lab_id,
+    f15c2_auth_auth_id,
+    f15c2_lab_lab_id,
     emp_name,
     emp_email,
     emp_office,
@@ -131,8 +131,8 @@ create or replace TRIGGER F15C2_chair_trigger
 BEGIN
     insert into F15C2_emp( 
         emp_id,
-        auth_id,
-        lab_id,
+        f15c2_auth_auth_id,
+        f15c2_lab_lab_id,
         emp_name,
         emp_email,
         emp_office,
@@ -145,26 +145,26 @@ BEGIN
         chairperson_flag)
          VALUES ( 
         :NEW.emp_id,
-        :NEW.auth_id,
-        :NEW.lab_id,
+        :NEW.f15c2_auth_auth_id,
+        :NEW.f15c2_lab_lab_id,
         :NEW.emp_name,
         :NEW.emp_email,
         :NEW.emp_office,
         :NEW.emp_phone,
         :NEW.emp_status,
         :NEW.status_eff_date,
-        :NEW.sys_admin_flag,
-        :NEW.lab_dir_flag,
-        :NEW.exec_dir_flag,
-        :NEW.chairperson_flag) ;
+        'N',
+        'N',
+        'N',
+        'Y') ;
 END;
 /
 
 create view F15C2_sysadmin_view as
 SELECT 
     emp_id,
-    auth_id,
-    lab_id,
+    f15c2_auth_auth_id,
+    f15c2_lab_lab_id,
     emp_name,
     emp_email,
     emp_office,
@@ -183,8 +183,8 @@ create or replace TRIGGER F15C2_sysadmin_trigger
 BEGIN
     insert into F15C2_emp( 
         emp_id,
-        auth_id,
-        lab_id,
+        f15c2_auth_auth_id,
+        f15c2_lab_lab_id,
         emp_name,
         emp_email,
         emp_office,
@@ -197,26 +197,26 @@ BEGIN
         chairperson_flag)
          VALUES ( 
         :NEW.emp_id,
-        :NEW.auth_id,
-        :NEW.lab_id,
+        :NEW.f15c2_auth_auth_id,
+        :NEW.f15c2_lab_lab_id,
         :NEW.emp_name,
         :NEW.emp_email,
         :NEW.emp_office,
         :NEW.emp_phone,
         :NEW.emp_status,
         :NEW.status_eff_date,
-        :NEW.sys_admin_flag,
-        :NEW.lab_dir_flag,
-        :NEW.exec_dir_flag,
-        :NEW.chairperson_flag) ;
+        'Y',
+        'N',
+        'N',
+        'N') ;
 END;
 /
 
 create view F15C2_labdir_view as
 SELECT 
     emp_id,
-    auth_id,
-    lab_id,
+    f15c2_auth_auth_id,
+    f15c2_lab_lab_id,
     emp_name,
     emp_email,
     emp_office,
@@ -235,8 +235,8 @@ create or replace TRIGGER F15C2_labdir_trigger
 BEGIN
     insert into F15C2_emp( 
         emp_id,
-        auth_id,
-        lab_id,
+        f15c2_auth_auth_id,
+        f15c2_lab_lab_id,
         emp_name,
         emp_email,
         emp_office,
@@ -249,17 +249,17 @@ BEGIN
         chairperson_flag)
          VALUES ( 
         :NEW.emp_id,
-        :NEW.auth_id,
-        :NEW.lab_id,
+        :NEW.f15c2_auth_auth_id,
+        :NEW.f15c2_lab_lab_id,
         :NEW.emp_name,
         :NEW.emp_email,
         :NEW.emp_office,
         :NEW.emp_phone,
         :NEW.emp_status,
         :NEW.status_eff_date,
-        :NEW.sys_admin_flag,
-        :NEW.lab_dir_flag,
-        :NEW.exec_dir_flag,
-        :NEW.chairperson_flag) ;
+        'N',
+        'Y',
+        'N',
+        'N') ;
 END;
 /

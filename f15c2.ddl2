@@ -17,7 +17,7 @@ end;
 
 DROP SEQUENCE F15C2_auth_seq ; 
 create sequence F15C2_auth_seq 
-start with 100 
+start with 1 
 increment by 1 
 nomaxvalue 
 ;
@@ -170,7 +170,7 @@ end;
 
 DROP SEQUENCE F15C2_role_seq ; 
 create sequence F15C2_role_seq 
-start with 100 
+start with 1 
 increment by 1 
 nomaxvalue 
 ;
@@ -187,7 +187,7 @@ end;
 
 DROP SEQUENCE F15C2_status_seq ; 
 create sequence F15C2_status_seq 
-start with 100 
+start with 1 
 increment by 1 
 nomaxvalue 
 ;
@@ -247,9 +247,7 @@ DROP INDEX F15C2_emp_emp_id_FK_12 ;
 CREATE INDEX F15C2_emp_emp_id_FK_12 ON F15C2_rfe(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_status_status_id_FK_13 ;
 CREATE INDEX F15C2_status_status_id_FK_13 ON F15C2_rfe(F15C2_status_status_id) ;
-DROP INDEX F15C2_task_task_id_FK_14 ;
-CREATE INDEX F15C2_task_task_id_FK_14 ON F15C2_rfe(F15C2_task_task_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_15 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_15 ON F15C2_rfe_task(F15C2_rfe_rfe_id) ;
-DROP INDEX F15C2_task_task_id_FK_16 ;
-CREATE INDEX F15C2_task_task_id_FK_16 ON F15C2_rfe_task(F15C2_task_task_id) ;
+DROP INDEX F15C2_rfe_rfe_id_FK_14 ;
+CREATE INDEX F15C2_rfe_rfe_id_FK_14 ON F15C2_rfe_task(F15C2_rfe_rfe_id) ;
+DROP INDEX F15C2_task_task_id_FK_15 ;
+CREATE INDEX F15C2_task_task_id_FK_15 ON F15C2_rfe_task(F15C2_task_task_id) ;
