@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.logical.DPVLogical" name="Logical" id="429DB626-DB29-D552-7BC8-DAA703962FF2">
+<createdBy>Johnny</createdBy>
+<modifiedBy>Johnny</modifiedBy>
+<createdTime>2015-11-20 18:59:39 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>2</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="03FDEBA8-1F2C-9D6A-45BD-E05E9BEE94E0" otype="Entity" vid="A7CCB725-9F80-CB2B-F923-DEEB14FD26F3">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="450" y="246" width="218" height="126"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="A4F81109-E7E3-FE5F-0701-394654F7B41E" otype="Entity" vid="A78E0C6E-DFC6-AF8F-50C9-B540D67CD9BB">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="74" y="222" width="215" height="174"/>
+</OView>
+</objectViews>
+<connectors>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="65365C60-D422-52EE-3A3D-17E9A9A05FD6" otype="Relation" vid_source="A78E0C6E-DFC6-AF8F-50C9-B540D67CD9BB" vid_target="A7CCB725-9F80-CB2B-F923-DEEB14FD26F3">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<lineWidth>1</lineWidth>
+<points>
+<point x="289" y="274"/>
+<point x="450" y="273"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="A6511EF6-FEE1-7603-AF8A-CEBD55485C50" otype="Relation" vid_source="A78E0C6E-DFC6-AF8F-50C9-B540D67CD9BB" vid_target="A7CCB725-9F80-CB2B-F923-DEEB14FD26F3">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<lineWidth>1</lineWidth>
+<points>
+<point x="289" y="319"/>
+<point x="450" y="319"/>
+</points>
+</Connector>
+</connectors>
+</Diagram>

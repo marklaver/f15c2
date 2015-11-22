@@ -1,0 +1,175 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A4F81109-E7E3-FE5F-0701-394654F7B41E" name="hero">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 21:16:44 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="HERO_ID" id="32DF5082-8EF4-89C7-1E7B-A79B36D22331">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 21:16:54 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HERO_NAME" id="C48A8D13-5EEA-BEDD-48E4-ABA6E45F13AF">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 21:17:12 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TITLE" id="C7DE7FB8-D816-6FAF-C262-8E28C95CD044">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 21:17:18 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="UNIVERSE" id="B81F42B2-5B24-D3B2-DCB2-932AF4543FF4">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 23:47:05 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ROLE" id="B467718E-B038-902D-D7D2-443D4EB1D234">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 23:49:15 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HEROIC_ABILITY" id="7FABB673-DC1D-5C6E-278E-9B77AA64C0C8">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:01:17 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BASIC_HEALTH" id="2E2FCE7C-8AE2-EFAC-2A48-200153CBBCC5">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:01:44 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BASIC_DAMAGE" id="069214B6-9FDA-B414-3470-BD0E84BCD555">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:02:05 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BASIC_MANA" id="371CEEAA-B8F6-206D-49C5-C83AE514BBC0">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:02:17 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="GAME_ID" id="F0450233-EE56-5D95-C3F9-3D42B3F7BD2C">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:06:43 UTC</createdTime>
+<generatorID>65365C60-D422-52EE-3A3D-17E9A9A05FD6</generatorID>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4122EF59-41C5-3D8F-3C0B-65CFB2001B59</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="GAME_ID1" id="DDC70599-4688-8B6B-777C-93A07C75E18C">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:08:48 UTC</createdTime>
+<generatorID>A6511EF6-FEE1-7603-AF8A-CEBD55485C50</generatorID>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4122EF59-41C5-3D8F-3C0B-65CFB2001B59</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2385EBBB-1551-CCED-6E06-1F5D29357601" name="hero PK">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-21 21:17:10 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>32DF5082-8EF4-89C7-1E7B-A79B36D22331</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

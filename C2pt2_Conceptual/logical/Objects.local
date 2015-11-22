@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="03FDEBA8-1F2C-9D6A-45BD-E05E9BEE94E0" name="game" seqName="seg_0"/>
+   <object objectType="Entity" objectID="A4F81109-E7E3-FE5F-0701-394654F7B41E" name="hero" seqName="seg_0"/>
+   <object objectType="Relation" objectID="65365C60-D422-52EE-3A3D-17E9A9A05FD6" name="environmentv1" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A6511EF6-FEE1-7603-AF8A-CEBD55485C50" name="character" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

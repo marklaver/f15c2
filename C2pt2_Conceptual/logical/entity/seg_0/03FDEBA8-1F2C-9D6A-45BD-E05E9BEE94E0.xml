@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="03FDEBA8-1F2C-9D6A-45BD-E05E9BEE94E0" name="game">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:03:26 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="GAME_ID" id="4122EF59-41C5-3D8F-3C0B-65CFB2001B59">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:03:36 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="GAME_NAME" id="2E964F48-0C2C-2D6F-475A-5C15AADD6AC2">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:03:54 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PUBLISHED_YEAR" id="2C106CDB-181D-1197-FC30-EF25AC5BF667">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:04:29 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="GENRE" id="32555BC3-40DD-1D68-35E1-01048061C7CF">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:04:47 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COMPANY" id="D812D174-5681-65B9-6EAA-613631FD6787">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:05:08 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HERO_ID" id="87111A03-0B09-8350-FB82-568A6EC33C44">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:06:20 UTC</createdTime>
+<generatorID>65365C60-D422-52EE-3A3D-17E9A9A05FD6</generatorID>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>32DF5082-8EF4-89C7-1E7B-A79B36D22331</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8CCE241E-B329-84B7-8888-3FBB992E0871" name="game PK">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-22 00:03:41 UTC</createdTime>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4122EF59-41C5-3D8F-3C0B-65CFB2001B59</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
