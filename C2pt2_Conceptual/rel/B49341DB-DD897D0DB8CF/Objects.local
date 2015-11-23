@@ -1,2 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle.dbtools.crest.model.design.relational.RelationalDesign/>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="CFF27E61-86B7-6C15-43E9-E57F15A9DB35" name="game" seqName="seg_0"/>
+   <object objectType="Table" objectID="E9D64D3B-8AD6-E488-899C-7C14754892DF" name="hero" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="EA5DE848-8706-8469-2240-2BE1115E04C5" name="hero_game_FK" seqName="seg_0" containerID="E9D64D3B-8AD6-E488-899C-7C14754892DF" refContainerID="CFF27E61-86B7-6C15-43E9-E57F15A9DB35"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

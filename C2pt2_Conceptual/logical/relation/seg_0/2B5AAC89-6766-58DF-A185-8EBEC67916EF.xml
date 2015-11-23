@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="hero_game_FK" directorySegmentName="seg_0" id="2B5AAC89-6766-58DF-A185-8EBEC67916EF">
+<createdBy>Johnny</createdBy>
+<createdTime>2015-11-23 21:05:42 UTC</createdTime>
+<generatorID>BC01DCE5-7EA3-3455-2DC5-D0F57DC99854</generatorID>
+<ownerDesignName>C2pt2_Conceptual</ownerDesignName>
+<engineerTo>
+<item key="B49341DB-3035-9CA9-5F6A-DD897D0DB8CF" value="true"/>
+</engineerTo>
+<sourcePk>9F1985C8-0FD2-5832-B9BF-FA704CE3718A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A952647D-7252-4E63-8CCE-E8623022B1B7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>17841889-1055-5FD2-F4BA-94A32808D7A1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
