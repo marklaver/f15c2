@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="rfe_task" directorySegmentName="seg_0" id="C1F0A26B-FE77-D7EA-4CFE-297072F8D4C0">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-18 23:53:10 UTC</createdTime>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>333521E8-37B4-022C-03CF-D0CF2BF409D7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>81D9610F-A694-B638-A942-D23F58FD78DA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="rfe_task_id" id="6334DC54-4A0E-AC11-C9A3-DF665002F69F">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-18 23:53:37 UTC</createdTime>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+<attribute name="effective_date" id="82639B63-0A0D-AC28-C61F-93D5CD674952">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-19 00:03:48 UTC</createdTime>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A914DB11-A001-446E-F388-DE77CB8D542E" name="F15C2 comment">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>9D339C50-9BD0-97E7-0565-2E45D7DFC7E9</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comment id" id="3996A3BF-73FE-0219-2705-6E48997A9908">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>4314BA6B-7424-CDAC-B543-CC3E79C43B8A</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="F15C2 rfe rfe id" id="40AA577F-D3D2-E9C0-5678-F20598AC0F46">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>A761DD90-22DE-02EA-3E95-FA2005A3710F</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<referedAttribute>103B8A73-4473-FD02-C907-32E9E2414FF4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="F15C2 emp emp id" id="091079D3-3D97-E95B-AA8B-83EF77B0AC09">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>6FE82A91-E21B-2C0D-CC92-B9379A6B4BCB</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<referedAttribute>8E3495A1-26F5-2BAF-3B95-03F1E211E32D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comments" id="BF20E5EB-225C-E76E-8872-6A5B5DDC0E65">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>B4E301E0-F2BE-FCB7-78D5-FFD1F8A967D4</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment entry date" id="25BB5DD1-737B-7A38-8D64-6C831884DAF8">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>D7459B87-7F04-E3F3-E81D-01FBCF8B26EC</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E08AB395-7789-FE8A-409F-AB291447EF66" name="F15C2 comment PK">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:04:18 UTC</createdTime>
+<generatorID>9743127C-43BE-3E03-7C6C-8B12F8B5032F</generatorID>
+<ownerDesignName>conceptualv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3996A3BF-73FE-0219-2705-6E48997A9908</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
