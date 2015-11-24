@@ -1,19 +1,3 @@
-DROP SEQUENCE F15C2_approver_seq ; 
-create sequence F15C2_approver_seq 
-start with 100 
-increment by 1 
-nomaxvalue 
-;
-DROP TRIGGER F15C2_approver_PK_trig 
-; 
-
-create or replace trigger F15C2_approver_PK_trig 
-before insert on F15C2_approver
-for each row 
-begin 
-select F15C2_approver_seq.nextval into :new.approver_id from dual; 
-end; 
-/
 
 DROP SEQUENCE F15C2_auth_seq ; 
 create sequence F15C2_auth_seq 
@@ -219,10 +203,6 @@ select F15C2_task_seq.nextval into :new.task_id from dual;
 end; 
 /
 
-DROP INDEX F15C2_emp_emp_id_FK_0 ;
-CREATE INDEX F15C2_emp_emp_id_FK_0 ON F15C2_approver(F15C2_emp_emp_id) ;
-DROP INDEX F15C2_rfe_rfe_id_FK_1 ;
-CREATE INDEX F15C2_rfe_rfe_id_FK_1 ON F15C2_approver(F15C2_rfe_rfe_id) ;
 DROP INDEX F15C2_emp_emp_id_FK_2 ;
 CREATE INDEX F15C2_emp_emp_id_FK_2 ON F15C2_comment(F15C2_emp_emp_id) ;
 DROP INDEX F15C2_rfe_rfe_id_FK_3 ;
