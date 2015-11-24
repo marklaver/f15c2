@@ -3,7 +3,7 @@ ALTER TABLE F15C2_emp DISABLE CONSTRAINT F15C2_emp_F15C2_auth_FK;
 TRUNCATE TABLE F15C2_auth;
 INSERT INTO F15C2_auth(auth_id, right) VALUES (1, 'view');
 INSERT INTO F15C2_auth(auth_id, right) VALUES (2, 'edit');
-INSERT INTO F15C2_auth(auth_id, right) VALUES (3, NULL);
+INSERT INTO F15C2_auth(auth_id, right) VALUES (3, 'none');
 ALTER TABLE F15C2_emp ENABLE CONSTRAINT F15C2_emp_F15C2_auth_FK;
 ALTER TRIGGER F15C2_auth_PK_trig ENABLE;
 --select * from f15c2_auth;
@@ -27,43 +27,43 @@ TRUNCATE TABLE F15C2_emp;
 INSERT INTO F15C2_emp (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (1, 'SMITH', 2, 1, 'smith@gmail.com', 'A207', '512-0392', 'A', '17-DEC-1980', 'Y', 'N', 'N', 'N');
+    (1, 'SMITH', 2, 3, 'smith@example.com', 'A207', '512-0392', 'A', '17-DEC-1980', 'Y', 'N', 'N', 'N');
 INSERT INTO F15C2_emp (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (2, 'ALLEN', 2, 1, 'allen@gmail.com', 'A701', '512-0562', 'A', '17-FEB-1990', 'N', 'Y', 'N', 'N');
+    (2, 'ALLEN', 2, 1, 'allen@example.com', 'A701', '512-0562', 'A', '17-FEB-1990', 'N', 'Y', 'N', 'N');
 INSERT INTO F15C2_emp (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (3, 'WARD', 1, 2, 'mard@icloud.com', 'A705', '512-7562', 'A', '28-JAN-2000', 'N', 'N', 'Y', 'N');
+    (3, 'WARD', 1, 3, 'ward@example.com', 'A705', '512-7562', 'A', '28-JAN-2000', 'N', 'N', 'Y', 'N');
 INSERT INTO F15C2_emp (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag)  VALUES
-    (4, 'JONES', 1, 2, 'jones@gmail.com', 'B205', '512-7321', 'A', '02-JUL-2010', 'N', 'N', 'N', 'Y');
+    (4, 'JONES', 1, 2, 'jones@example.com', 'B205', '512-7321', 'A', '02-JUL-2010', 'N', 'N', 'N', 'Y');
 INSERT INTO F15C2_emp (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (5, 'MARTIN', 2, 3, 'martin@gmail.com', 'B705', '512-9481', 'I', '02-JUL-2010', 'N', 'N', 'N', 'N');
+    (5, 'MARTIN', 2, 3, 'martin@example.com', 'B705', '512-9481', 'I', '02-JUL-2010', 'N', 'N', 'N', 'N');
 INSERT INTO F15C2_emp  (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (6, 'CHUANG', 3, 3, 'chuang@gmail.com', 'C331', '210-0392', 'I', '06-JUN-2010', 'N', 'N', 'N', 'N');
+    (6, 'CHUANG', 3, 3, 'chuang@example.com', 'C331', '210-0392', 'I', '06-JUN-2010', 'N', 'N', 'N', 'N');
 INSERT INTO F15C2_emp  (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (7, 'RELLENMEYER', 3, 1, 'rellenmeyer@gmail.com', 'C347', '210-7893', 'A', '17-DEC-1980', 'Y', 'N', 'N', 'N');
+    (7, 'RELLENMEYER', 3, 3, 'rellenmeyer@example.com', 'C347', '210-7893', 'A', '17-DEC-1980', 'Y', 'N', 'N', 'N');
 INSERT INTO F15C2_emp  (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (8, 'SCOTT', 3, 1, 'scott@gmail.com', 'C429', '210-5432', 'A', '15-MAR-1985', 'N', 'Y', 'N', 'N');
+    (8, 'SCOTT', 3, 3, 'scott@example.com', 'C429', '210-5432', 'A', '15-MAR-1985', 'N', 'Y', 'N', 'N');
 INSERT INTO F15C2_emp  (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (9, 'LEE', 3, 3, 'lee@gmail.com', 'C312', '210-1337', 'A', '01-AUG-1995', 'N', 'N', 'N', 'N');
+    (9, 'LEE', 3, 3, 'lee@example.com', 'C312', '210-1337', 'A', '01-AUG-1995', 'N', 'N', 'N', 'N');
 INSERT INTO F15C2_emp (emp_id, emp_name, f15c2_lab_lab_id, f15c2_auth_auth_id, 
   emp_email, emp_office, emp_phone, emp_status, status_eff_date, sys_admin_flag, 
   lab_dir_flag, exec_dir_flag, chairperson_flag) VALUES
-    (10, 'GUTIEREZ', 3, 3, 'gutierez@gmail.com', 'C311', '210-8736', 'A', '19-DEC-1990', 'N', 'N', 'N', 'N');
+    (10, 'GUTIEREZ', 3, 1, 'gutierez@example.com', 'C311', '210-8736', 'A', '19-DEC-1990', 'N', 'N', 'N', 'N');
 ALTER TABLE F15C2_approver ENABLE CONSTRAINT F15C2_approver_F15C2_emp_FK;
 ALTER TABLE F15C2_rfe ENABLE CONSTRAINT F15C2_rfe_F15C2_emp_FK;
 ALTER TABLE F15C2_contact ENABLE CONSTRAINT F15C2_contact_F15C2_emp_FK;
@@ -133,7 +133,7 @@ ALTER TRIGGER F15C2_task_PK_trig ENABLE;
 
 COMMIT;
 
---INSERT INTO F15C2_rfe (rfe_id, f15c2_emp_emp_id, f15c2_status_status_id, status_eff_date, explanation, alt_protections) VALUES (1, 1, 1, SYSDATE, 'explanation', 'protections');
+--INSERT INTO F15C2_rfe (rfe_id, f15c2_emp_emp_id, status_eff_date, explanation, alt_protections) VALUES (1, 1, SYSDATE, 'explanation', 'protections');
     
 --UPDATE f15c2_rfe SET F15C2_STATUS_STATUS_ID = 9 WHERE rfe_id = 123;
 --delete from f15c2_rfe where f15c2_emp_emp_id = 1;
