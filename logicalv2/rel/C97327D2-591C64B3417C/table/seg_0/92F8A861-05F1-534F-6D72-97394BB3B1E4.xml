@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92F8A861-05F1-534F-6D72-97394BB3B1E4" name="rfe_task">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>444869A9-B5FD-722A-137B-ECAAE7D64843</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rfe_task_id" id="9C35CB45-4D1B-B16D-7626-67A8F7D6BCA6">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>179C4231-3867-03C6-2CE3-9ECB96967F96</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15C2_rfe_rfe_id" id="E25CCA75-7FF1-76CC-0ADB-61F45F04E427">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>99CA5CF6-B5AF-A760-5487-A940457FAB5C</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="028CD3D9-983E-B583-BF26-DFDB4E9D6A4C" referredColumn="84C67601-2B34-FC31-542A-CA43AA9B7FF7"/>
+</associations>
+</Column>
+<Column name="F15C2_task_task_id" id="1629ADB6-8852-4D71-639D-A502D1AFB45E">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>F3A147FB-5B5B-1FFB-C15B-809DED6D5CD0</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="12B91016-4452-F5C4-CC00-413894515505" referredColumn="7F6BBD43-5006-45EC-3B52-C81CB9EE0C03"/>
+</associations>
+</Column>
+<Column name="effective_date" id="67A06F4F-FF2E-12F2-23A8-BE9288F20A3A">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>1E433081-EA5C-AB28-8CAA-A0DE4D77E4DC</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="176888DC-2A34-C6BB-E196-FB57EA6450A0" name="rfe_task_PK">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>6D4D7831-8E4F-7483-2D5C-AC0DD8A7BFBE</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C35CB45-4D1B-B16D-7626-67A8F7D6BCA6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB8D0E9E-2A3E-5893-E6A2-1D5DD5BC76BA" name="rfe_task_F15C2_rfe_FK">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>F474E3B9-19FB-9081-D306-074C90CF2060</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E25CCA75-7FF1-76CC-0ADB-61F45F04E427"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60A357C5-3000-9F43-92A9-8A4E6C413840" name="rfe_task_F15C2_task_FK">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 06:07:33 UTC</createdTime>
+<generatorID>C3FA8647-5F6F-4B73-E1E3-3F8E53146081</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1629ADB6-8852-4D71-639D-A502D1AFB45E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

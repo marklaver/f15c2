@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="logicalv2" id="60E15EE4-74AD-DE12-BC8B-EBD282F6CAEB" version="3.5">
+<createdBy>Mark</createdBy>
+<createdTime>2015-10-16 01:12:03 UTC</createdTime>
+<ownerDesignName>conceptual</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>60E15EE4-74AD-DE12-BC8B-EBD282F6CAEB</designId>
+</OSDM_Design>

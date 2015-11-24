@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ECA25360-304C-28BE-36D4-A0D90CF59F09" name="F15C2_auth">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-02 22:12:57 UTC</createdTime>
+<ownerDesignName>logicalv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="auth_id" id="F3C0A1D1-917A-F7C4-85A7-F752F91FB9EA">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-02 22:13:15 UTC</createdTime>
+<ownerDesignName>logicalv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="right" id="80C03C12-4754-743E-C2D3-006AE4EA0B5C">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-02 22:13:47 UTC</createdTime>
+<comment>Check constraint:  can be &apos;view&apos; or &apos;edit&apos;&lt;br/&gt;&apos;edit&apos; includes &apos;view&apos;</comment>
+<ownerDesignName>logicalv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="2E3960BC-5953-952D-BAA2-AEFE961AE2B2">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-24 16:01:49 UTC</createdTime>
+<generatorID>0B435B4A-EE13-D912-2B2A-BECDF868CA84</generatorID>
+<ownerDesignName>logicalv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>BA39BD41-0A84-AE39-DF14-9671D5B7A059</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="735A74D7-718B-FF9A-14FC-D7F1C65C54EF" name="F15C2_auth PK">
+<createdBy>Mark</createdBy>
+<createdTime>2015-11-02 22:13:21 UTC</createdTime>
+<ownerDesignName>logicalv2</ownerDesignName>
+<engineerTo>
+<item key="C97327D2-B33E-E778-EE30-591C64B3417C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F3C0A1D1-917A-F7C4-85A7-F752F91FB9EA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
